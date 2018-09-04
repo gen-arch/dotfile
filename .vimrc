@@ -7,23 +7,23 @@ Plugin 'VundleVim/Vundle.vim'
 
 " 導入したいプラグインを以下に列挙
 " Plugin '[Github Author]/[Github repo]' の形式で記入
-Plugin 'airblade/vim-gitgutter'
+"Plugin 'airblade/vim-gitgutter'
 Plugin 'Shougo/neocomplete.vim'
 Plugin 'Shougo/Unite.vim'
 Plugin 'Shougo/unite-outline'
-Plugin 'Shougo/neosnippet'
-Plugin 'davidhalter/jedi-vim'
-Plugin 'thinca/vim-quickrun'
-Plugin 'kana/vim-smartinput'
-Plugin 'kana/vim-operator-user'
-Plugin 'kana/vim-textobj-user'
-Plugin 'kana/vim-operator-replace'
-Plugin 'rhysd/vim-operator-surround'
-Plugin 'andviro/flake8-vim'
-Plugin 'hynek/vim-python-pep8-indent'
-Plugin 'jmcantrell/vim-virtualenv'
-Plugin 'kana/vim-textobj-indent'
-Plugin 'bps/vim-textobj-python'
+"Plugin 'Shougo/neosnippet'
+"Plugin 'davidhalter/jedi-vim'
+"Plugin 'thinca/vim-quickrun'
+"Plugin 'kana/vim-smartinput'
+"Plugin 'kana/vim-operator-user'
+"Plugin 'kana/vim-textobj-user'
+"Plugin 'kana/vim-operator-replace'
+"Plugin 'rhysd/vim-operator-surround'
+"Plugin 'andviro/flake8-vim'
+"Plugin 'hynek/vim-python-pep8-indent'
+"Plugin 'jmcantrell/vim-virtualenv'
+"Plugin 'kana/vim-textobj-indent'
+"Plugin 'bps/vim-textobj-python'
 Plugin 'scrooloose/nerdtree'
 call vundle#end()
 filetype plugin indent on
@@ -80,6 +80,26 @@ au FileType unite inoremap <silent> <buffer> <expr> <C-K> unite#do_action('vspli
 au FileType unite nnoremap <silent> <buffer> <ESC><ESC> :q<CR>
 au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
 """"""""""""""""""""""""""""""
+" NERDTreeの設定
+""""""""""""""""""""""""""""""
+map <C-n> :NERDTreeToggle<CR>
+" NERDTress File highlighting
+function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
+    exec 'autocmd filetype nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:guibg .' guifg='. a:guifg
+    exec 'autocmd filetype nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
+endfunction
+call NERDTreeHighlightFile('py',     'yellow',  'none', 'yellow',  '#151515')
+call NERDTreeHighlightFile('md',     'blue',    'none', '#3366FF', '#151515')
+call NERDTreeHighlightFile('yml',    'yellow',  'none', 'yellow',  '#151515')
+call NERDTreeHighlightFile('config', 'yellow',  'none', 'yellow',  '#151515')
+call NERDTreeHighlightFile('conf',   'yellow',  'none', 'yellow',  '#151515')
+call NERDTreeHighlightFile('json',   'yellow',  'none', 'yellow',  '#151515')
+call NERDTreeHighlightFile('html',   'yellow',  'none', 'yellow',  '#151515')
+call NERDTreeHighlightFile('styl',   'cyan',    'none', 'cyan',    '#151515')
+call NERDTreeHighlightFile('css',    'cyan',    'none', 'cyan',    '#151515')
+call NERDTreeHighlightFile('rb',     'Red',     'none', 'red',     '#151515')
+call NERDTreeHighlightFile('js',     'Red',     'none', '#ffa500', '#151515')
+call NERDTreeHighlightFile('php',    'Magenta', 'none', '#ff00ff', '#151515')
 "================================================
 "}}}
 
@@ -107,7 +127,7 @@ set number
 " 現在の行を強調表示
 set cursorline
 " 現在の行を強調表示（縦）
-set cursorcolumn
+"set cursorcolumn
 " 行末の1文字先までカーソルを移動できるように
 set virtualedit=onemore
 " インデントはスマートインデント
@@ -132,9 +152,9 @@ set list listchars=tab:\▸\-
 " Tab文字を半角スペースにする
 set expandtab
 " 行頭以外のTab文字の表示幅（スペースいくつ分）
-set tabstop=2
+set tabstop=4
 " 行頭でのTab文字の表示幅
-set shiftwidth=2
+set shiftwidth=4
 
 
 " 検索系
@@ -150,7 +170,8 @@ set wrapscan
 set hlsearch
 " ESC連打でハイライト解除
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
-colorscheme molokai
+"git clone https://github.com/tomasr/molokai ~/.vim/colors/
+"colorscheme molokai
 set encoding=utf-8
 set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
 set fileformats=unix,dos,mac
