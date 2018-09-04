@@ -207,4 +207,9 @@ host=`uname -a`
 if [[ $host =~ Microsoft ]];
 then
     PATH=$PATH:$HOME/e/bin
+    P_TM=`ps aux | grep $PPID | grep -E '[t]mux' | awk '{ print $11}'`
+    if [[ ! $P_TM =~ tmux ]];
+    then
+        tmux
+    fi
 fi
