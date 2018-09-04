@@ -1,4 +1,18 @@
 #=======================================
+#個別設定
+#=======================================
+host=`uname -a`
+
+if [[ $host =~ Microsoft ]];
+then
+    PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:$HOME/e/bin
+    P_TM=`ps aux | grep $PPID | grep -E '[t]mux' | awk '{ print $11}'`
+    if [[ ! $P_TM =~ tmux ]];
+    then
+        tmux
+    fi
+fi
+#=======================================
 #基本設定
 #=======================================
 # 補完候補を一覧で表示する
@@ -199,17 +213,3 @@ eval "$(rbenv init -)"
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
-#=======================================
-#個別設定
-#=======================================
-host=`uname -a`
-
-if [[ $host =~ Microsoft ]];
-then
-    PATH=$PATH:$HOME/e/bin
-    P_TM=`ps aux | grep $PPID | grep -E '[t]mux' | awk '{ print $11}'`
-    if [[ ! $P_TM =~ tmux ]];
-    then
-        tmux
-    fi
-fi
