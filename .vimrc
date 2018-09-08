@@ -124,6 +124,7 @@ set clipboard=unnamed
 " 見た目系
 " 行番号を表示
 set number
+map <C-l> :set nonumber<CR>
 " 現在の行を強調表示
 set cursorline
 " 現在の行を強調表示（縦）
@@ -152,9 +153,9 @@ set list listchars=tab:\▸\-
 " Tab文字を半角スペースにする
 set expandtab
 " 行頭以外のTab文字の表示幅（スペースいくつ分）
-set tabstop=4
+set tabstop=2
 " 行頭でのTab文字の表示幅
-set shiftwidth=4
+set shiftwidth=2
 
 
 " 検索系
