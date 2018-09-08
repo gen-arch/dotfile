@@ -166,13 +166,30 @@ bindkey '^r' anyframe-widget-put-history
 #=======================================
 
 #=======================================
+#関数
+#=======================================
+function peco-lscd {
+  local dir="$( ls | peco )"
+  if [ -f "$dir" ]; then
+    vi "$dir"
+  else
+    if [ ! -z "$dir" ] ; then
+      cd "$dir"
+    fi
+  fi
+}
+#=======================================
 #エイリアス
 #=======================================
 alias vi="vim"
 alias be="bundle exec"
+alias bi="bundle install --path vendor/bundle"
 alias la="ls -al"
 alias ll="ls -l"
 alias ps="ps aux"
+alias psp="ps aux | peco"
+alias pls=peco-lscd
+
 #=======================================
 #モジュール(http://zsh.sourceforge.net/Doc/Release/Completion-System.html#Standard-Styles)
 #=======================================
