@@ -138,7 +138,7 @@ export SHELL="/usr/bin/zsh"
 #=======================================
 
 #=======================================
-#anyframe(https://github.com/mollifier/anyframe)
+#anyframe(https://github.com/mollifier/anyframe ~/.temp/anyframe)
 #=======================================
 fpath=(~/.temp/anyframe(N-/) $fpath)
 
