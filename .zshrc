@@ -235,3 +235,4 @@ if [ $SHLVL = 3 ]; then
     eval "$(pyenv init -)"
   fi
 fi
+[ -f ~/.zlogin ] && source ~/.zlogin
