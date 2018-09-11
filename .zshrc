@@ -1,5 +1,5 @@
 if [ $SHLVL = 1 ] && [ ! -z "$PS1" ]; then
-  P_TM=`ps aux | grep $PPID | grep -E '[t]mux' | awk '{ print $11}'`
+  P_TM=`ps aux | awk -v "pid=$PPID" '$2 == pid{ print $11 }'`
   if [[ ! $P_TM =~ tmux ]];
   then
       tmux
