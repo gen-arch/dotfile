@@ -69,6 +69,10 @@ alias sc='screen'
 alias ps='ps --sort=start_time'
 alias be='bundle exec'
 alias vi='vim'
+alias psp='ps aux | peco'
+alias bi='bundle install --path vendor/bundle'
+alias be='bundle exec'
+
 #==========================================================================================
 # Auto Complete
 #==========================================================================================
