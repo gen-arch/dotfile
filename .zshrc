@@ -1,12 +1,15 @@
-if [ $SHLVL = 1 ] && [ ! -z "$PS1" ]; then
+if [ -z "$SH_LOAD" ]; then
+  export SH_LOAD="tm"
   P_TM=`ps aux | awk -v "pid=$PPID" '$2 == pid{ print $11 }'`
-  if [[ ! $P_TM =~ tmux ]];
+  if [[ ! $P_TM =~ tmux ]] && [ -f ~/.tmux.conf ];
   then
+      echo "start tmux"
       tmux
       exit
   fi
 fi
-if [ $SHLVL = 3 ]; then
+[ -f ~/.zlogin ] && source ~/.zlogin
+if [ $SH_LOAD = "tm" ] || [ $SH_LOAD = "sc" ]; then
   echo "include .zshrc"
   #=======================================
   #ローカル設定読み込み
@@ -234,5 +237,5 @@ if [ $SHLVL = 3 ]; then
     export PATH="$PYENV_ROOT/bin:$PATH"
     eval "$(pyenv init -)"
   fi
+  export SH_LOAD="exit"
 fi
-[ -f ~/.zlogin ] && source ~/.zlogin
