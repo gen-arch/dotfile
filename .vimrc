@@ -30,7 +30,7 @@ Plugin 'kana/vim-textobj-indent'
 Plugin 'bps/vim-textobj-python'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-endwise'
-"Plugin 'twitvim/twitvim'
+Plugin 'twitvim/twitvim'
 Plugin 'kana/vim-submode'
 call vundle#end()
 filetype plugin indent on
