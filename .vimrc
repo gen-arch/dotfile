@@ -29,7 +29,7 @@ Plugin 'kana/vim-textobj-indent'
 Plugin 'bps/vim-textobj-python'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-endwise'
-"Plugin 'twitvim/twitvim'
+Plugin 'twitvim/twitvim'
 Plugin 'kana/vim-submode'
 call vundle#end()
 filetype plugin indent on
@@ -205,3 +205,6 @@ nmap <Esc><Esc> :nohlsearch<CR><Esc>
 set encoding=utf-8
 set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
 set fileformats=unix,dos,mac
+autocmd BufNewFile,BufRead *.rb nnoremap <C-e> :!ruby %
+autocmd BufNewFile,BufRead *.py nnoremap <C-e> :!python %
+autocmd BufNewFile,BufRead *.pl nnoremap <C-e> :!perl %
