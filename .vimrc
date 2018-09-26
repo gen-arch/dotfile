@@ -31,6 +31,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-endwise'
 "Plugin 'twitvim/twitvim'
 Plugin 'kana/vim-submode'
+Plugin 'sjl/badwolf'
 call vundle#end()
 filetype plugin indent on
 
@@ -236,7 +237,9 @@ set hlsearch
 " ESC連打でハイライト解除
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
 "git clone https://github.com/tomasr/molokai ~/.vim/colors/
-colorscheme koehler
+syntax on
+"colorscheme badwolf
+highlight Normal ctermbg=none
 set encoding=utf-8
 set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
 set fileformats=unix,dos,mac
