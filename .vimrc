@@ -29,7 +29,7 @@ Plugin 'kana/vim-textobj-indent'
 Plugin 'bps/vim-textobj-python'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-endwise'
-"Plugin 'twitvim/twitvim'
+Plugin 'twitvim/twitvim'
 Plugin 'kana/vim-submode'
 Plugin 'sjl/badwolf'
 call vundle#end()
@@ -238,7 +238,8 @@ set hlsearch
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
 "git clone https://github.com/tomasr/molokai ~/.vim/colors/
 syntax on
-"colorscheme badwolf
+colorscheme molokai
+"set t_Co=256
 highlight Normal ctermbg=none
 set encoding=utf-8
 set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
