@@ -239,6 +239,7 @@ nmap <Esc><Esc> :nohlsearch<CR><Esc>
 "git clone https://github.com/tomasr/molokai ~/.vim/colors/
 syntax on
 "colorscheme badwolf
+set t_Co=256
 highlight Normal ctermbg=none
 set encoding=utf-8
 set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
