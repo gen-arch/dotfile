@@ -31,7 +31,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-endwise'
 "Plugin 'twitvim/twitvim'
 Plugin 'kana/vim-submode'
-Plugin 'sjl/badwolf'
+"Plugin 'sjl/badwolf'
 call vundle#end()
 filetype plugin indent on
 
