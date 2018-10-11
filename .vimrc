@@ -31,7 +31,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-endwise'
 "Plugin 'twitvim/twitvim'
 Plugin 'kana/vim-submode'
-"Plugin 'sjl/badwolf'
+Plugin 'sjl/badwolf'
 call vundle#end()
 filetype plugin indent on
 
@@ -195,7 +195,7 @@ map <C-l> :set nonumber<CR>
 " 現在の行を強調表示
 set cursorline
 " 現在の行を強調表示（縦）
-"set cursorcolumn
+set cursorcolumn
 " 行末の1文字先までカーソルを移動できるように
 set virtualedit=onemore
 " インデントはスマートインデント
@@ -238,7 +238,7 @@ set hlsearch
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
 "git clone https://github.com/tomasr/molokai ~/.vim/colors/
 syntax on
-"colorscheme badwolf
+colorscheme elflord
 set t_Co=256
 highlight Normal ctermbg=none
 set encoding=utf-8
