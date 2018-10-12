@@ -5,7 +5,6 @@ if [ -z "$SH_LOAD" ]; then
   then
       echo "start tmux"
       tmux
-      exit
   fi
 fi
 [ -f ~/.zlogin ] && source ~/.zlogin

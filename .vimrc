@@ -31,7 +31,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-endwise'
 "Plugin 'twitvim/twitvim'
 Plugin 'kana/vim-submode'
-Plugin 'sjl/badwolf'
+"Plugin 'sjl/badwolf'
 call vundle#end()
 filetype plugin indent on
 
@@ -193,9 +193,9 @@ set clipboard=unnamed
 set number
 map <C-l> :set nonumber<CR>
 " 現在の行を強調表示
-set cursorline
+"set cursorline
 " 現在の行を強調表示（縦）
-set cursorcolumn
+"set cursorcolumn
 " 行末の1文字先までカーソルを移動できるように
 set virtualedit=onemore
 " インデントはスマートインデント
@@ -237,13 +237,20 @@ set hlsearch
 " ESC連打でハイライト解除
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
 "git clone https://github.com/tomasr/molokai ~/.vim/colors/
-syntax on
-colorscheme elflord
+""colorschem molokai
 set t_Co=256
-highlight Normal ctermbg=none
+syntax on
+
+" highligh setting
+highligh Normal ctermbg=none
+highligh Visual term=reverse ctermbg=8 guibg=Yellow
+
+" encoding
 set encoding=utf-8
 set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
 set fileformats=unix,dos,mac
+
+" Program Execution
 autocmd BufNewFile,BufRead *.rb nnoremap <C-e> :!ruby %
 autocmd BufNewFile,BufRead *.py nnoremap <C-e> :!python %
 autocmd BufNewFile,BufRead *.pl nnoremap <C-e> :!perl %
