@@ -237,13 +237,14 @@ set hlsearch
 " ESC連打でハイライト解除
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
 "git clone https://github.com/tomasr/molokai ~/.vim/colors/
-""colorschem molokai
+colorschem molokai
 set t_Co=256
 syntax on
 
 " highligh setting
-highligh Normal ctermbg=none
+highligh Normal ctermbg=none guibg=cyan
 highligh Visual term=reverse ctermbg=8 guibg=Yellow
+highligh LineNr term=underline ctermfg=10 ctermbg=none
 
 " encoding
 set encoding=utf-8
