@@ -5,6 +5,7 @@ if [ -z "$SH_LOAD" ]; then
   then
       echo "start tmux"
       tmux
+      exit
   fi
 fi
 [ -f ~/.zlogin ] && source ~/.zlogin
@@ -136,6 +137,8 @@ if [ $SH_LOAD = "tm" ] || [ $SH_LOAD = "sc" ]; then
   #PATH追加
   export PATH=$PATH:$HOME/bin
   export SHELL="/usr/bin/zsh"
+
+  export TERM=xterm-256color
   #=======================================
 
   #=======================================

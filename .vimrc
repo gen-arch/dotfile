@@ -193,9 +193,9 @@ set clipboard=unnamed
 set number
 map <C-l> :set nonumber<CR>
 " 現在の行を強調表示
-"set cursorline
-" 現在の行を強調表示（縦）
-"set cursorcolumn
+ set cursorline
+" " 現在の行を強調表示（縦）
+ set cursorcolumn"
 " 行末の1文字先までカーソルを移動できるように
 set virtualedit=onemore
 " インデントはスマートインデント
@@ -237,14 +237,15 @@ set hlsearch
 " ESC連打でハイライト解除
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
 "git clone https://github.com/tomasr/molokai ~/.vim/colors/
-""colorschem molokai
 syntax on
 colorscheme molokai
-set t_Co=256
+set t_Co=255
+let g:molokai_original = 1
+let g:rehash256 = 1
+set background=dark
 
 " highligh setting
-highligh Normal ctermbg=none
-highligh Visual term=reverse ctermbg=8 guibg=Yellow
+"highligh Visual term=reverse ctermbg=8 guibg=Yellow
 
 " encoding
 set encoding=utf-8
