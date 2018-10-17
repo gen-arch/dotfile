@@ -239,13 +239,16 @@ nmap <Esc><Esc> :nohlsearch<CR><Esc>
 "git clone https://github.com/tomasr/molokai ~/.vim/colors/
 syntax on
 colorscheme molokai
-set t_Co=255
+set t_Co=256
 let g:molokai_original = 1
 let g:rehash256 = 1
 set background=dark
 
 " highligh setting
+
+"highligh Normal ctermbg=none
 "highligh Visual term=reverse ctermbg=8 guibg=Yellow
+
 
 " encoding
 set encoding=utf-8
