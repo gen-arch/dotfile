@@ -164,7 +164,7 @@ let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
 autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
 
 "rsenseのインストールフォルダがデフォルトと異なるので設定
-let g:rsenseHome = expand("/home/tos/.rbenv/shims/rsense")
+let g:rsenseHome = expand("~/.rbenv/shims/rsense")
 let g:rsenseUseOmniFunc = 1"
 "================================================
 
