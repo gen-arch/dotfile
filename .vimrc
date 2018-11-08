@@ -238,19 +238,19 @@ set hlsearch
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
 "git clone https://github.com/tomasr/molokai ~/.vim/colors/
 syntax on
-"colorscheme molokai
-set t_Co=255
+colorscheme molokai
+set t_Co=256
 let g:molokai_original = 1
 let g:rehash256 = 1
 set background=dark
 
 " highligh setting
-highligh Normal ctermbg=none
-highligh Comment term=bold ctermfg=12
+"highligh Normal ctermbg=none
+"highligh Comment term=bold ctermfg=12
 
 " encoding
 set encoding=utf-8
-set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
+set fileencodings=utf-8
 set fileformats=unix,dos,mac
 
 " Program Execution
