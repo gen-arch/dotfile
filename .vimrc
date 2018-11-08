@@ -31,6 +31,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-endwise'
 Plugin 'twitvim/twitvim'
 Plugin 'kana/vim-submode'
+Plugin 'slim-template/vim-slim'
 "Plugin 'sjl/badwolf'
 call vundle#end()
 filetype plugin indent on
@@ -53,9 +54,6 @@ if !exists('g:neocomplete#force_omni_input_patterns')
 endif
 
 let g:neocomplete#force_omni_input_patterns.python = '\h\w*\|[^. \t]\.\w*'
-
-syntax enable
-set t_Co=256
 
 set smarttab
 set expandtab
@@ -237,7 +235,7 @@ set hlsearch
 " ESC連打でハイライト解除
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
 "git clone https://github.com/tomasr/molokai ~/.vim/colors/
-syntax on
+syntax enable
 colorscheme molokai
 set t_Co=256
 let g:molokai_original = 1
