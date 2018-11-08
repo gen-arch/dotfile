@@ -34,7 +34,6 @@ Plugin 'kana/vim-submode'
 Plugin 'slim-template/vim-slim'
 "Plugin 'sjl/badwolf'
 call vundle#end()
-filetype plugin indent on
 
 
 
@@ -236,6 +235,7 @@ set hlsearch
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
 "git clone https://github.com/tomasr/molokai ~/.vim/colors/
 syntax enable
+filetype plugin indent on
 colorscheme molokai
 set t_Co=256
 let g:molokai_original = 1
@@ -255,3 +255,4 @@ set fileformats=unix,dos,mac
 autocmd BufNewFile,BufRead *.rb nnoremap <C-e> :!ruby %
 autocmd BufNewFile,BufRead *.py nnoremap <C-e> :!python %
 autocmd BufNewFile,BufRead *.pl nnoremap <C-e> :!perl %
+autocmd BufNewFile,BufRead *.slim setlocal filetype=slim
