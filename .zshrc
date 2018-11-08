@@ -238,4 +238,5 @@ if [ $SH_LOAD = "tm" ] || [ $SH_LOAD = "sc" ]; then
     eval "$(pyenv init -)"
   fi
   export SH_LOAD="exit"
+  cd ~
 fi
