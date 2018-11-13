@@ -238,7 +238,7 @@ set hlsearch
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
 "git clone https://github.com/tomasr/molokai ~/.vim/colors/
 syntax on
-"colorscheme molokai
+colorscheme molokai
 set t_Co=256
 let g:molokai_original = 1
 let g:rehash256 = 1
