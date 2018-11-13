@@ -31,9 +31,9 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-endwise'
 Plugin 'twitvim/twitvim'
 Plugin 'kana/vim-submode'
+Plugin 'slim-template/vim-slim'
 "Plugin 'sjl/badwolf'
 call vundle#end()
-filetype plugin indent on
 
 
 
@@ -53,9 +53,6 @@ if !exists('g:neocomplete#force_omni_input_patterns')
 endif
 
 let g:neocomplete#force_omni_input_patterns.python = '\h\w*\|[^. \t]\.\w*'
-
-syntax enable
-set t_Co=256
 
 set smarttab
 set expandtab
@@ -164,7 +161,7 @@ let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
 autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
 
 "rsenseのインストールフォルダがデフォルトと異なるので設定
-let g:rsenseHome = expand("/home/tos/.rbenv/shims/rsense")
+let g:rsenseHome = expand("~/.rbenv/shims/rsense")
 let g:rsenseUseOmniFunc = 1"
 "================================================
 
@@ -193,9 +190,9 @@ set clipboard=unnamed
 set number
 map <C-l> :set nonumber<CR>
 " 現在の行を強調表示
- set cursorline
+" set cursorline
 " " 現在の行を強調表示（縦）
- set cursorcolumn"
+" set cursorcolumn"
 " 行末の1文字先までカーソルを移動できるように
 set virtualedit=onemore
 " インデントはスマートインデント
@@ -237,7 +234,8 @@ set hlsearch
 " ESC連打でハイライト解除
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
 "git clone https://github.com/tomasr/molokai ~/.vim/colors/
-syntax on
+syntax enable
+filetype plugin indent on
 colorscheme molokai
 set t_Co=256
 let g:molokai_original = 1
@@ -245,17 +243,16 @@ let g:rehash256 = 1
 set background=dark
 
 " highligh setting
-
 "highligh Normal ctermbg=none
-"highligh Visual term=reverse ctermbg=8 guibg=Yellow
-
+"highligh Comment term=bold ctermfg=12
 
 " encoding
 set encoding=utf-8
-set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
+set fileencodings=utf-8
 set fileformats=unix,dos,mac
 
 " Program Execution
 autocmd BufNewFile,BufRead *.rb nnoremap <C-e> :!ruby %
 autocmd BufNewFile,BufRead *.py nnoremap <C-e> :!python %
 autocmd BufNewFile,BufRead *.pl nnoremap <C-e> :!perl %
+autocmd BufNewFile,BufRead *.slim setlocal filetype=slim
