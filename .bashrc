@@ -29,6 +29,25 @@ if [[ $HOSTNAME =~ magi ]]; then
     complete -F _routers login
 fi
 #==========================================================================================
+#casper configurarion
+#==========================================================================================
+if [[ $HOSTNAME =~ casper ]]; then
+    #functions
+    _routers()
+    {
+      local cur
+        cur=${COMP_WORDS[COMP_CWORD]}
+          COMPREPLY=($(compgen -W '$(cat ~/.routers ~/.phone 2>/dev/null)' -- $cur))
+    }
+    #auto completes
+    complete -F _routers telnet
+    complete -F _routers ping
+    complete -F _routers traceroute
+    complete -F _routers ssh
+    complete -F _routers nslookup
+    complete -F _routers login
+fi
+#==========================================================================================
 # User specific aliases and functions
 #==========================================================================================
 #routers auto complete

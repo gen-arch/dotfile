@@ -29,7 +29,7 @@ Plugin 'kana/vim-textobj-indent'
 Plugin 'bps/vim-textobj-python'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-endwise'
-Plugin 'twitvim/twitvim'
+"Plugin 'twitvim/twitvim'
 Plugin 'kana/vim-submode'
 "Plugin 'sjl/badwolf'
 call vundle#end()
@@ -164,7 +164,7 @@ let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
 autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
 
 "rsenseのインストールフォルダがデフォルトと異なるので設定
-let g:rsenseHome = expand("/home/tos/.rbenv/shims/rsense")
+let g:rsenseHome = expand("~/.rbenv/shims/rsense")
 let g:rsenseUseOmniFunc = 1"
 "================================================
 
@@ -195,7 +195,7 @@ map <C-l> :set nonumber<CR>
 " 現在の行を強調表示
 " set cursorline
 " " 現在の行を強調表示（縦）
-" set cursorcolumn"
+" set cursorcolumn
 " 行末の1文字先までカーソルを移動できるように
 set virtualedit=onemore
 " インデントはスマートインデント
@@ -238,19 +238,19 @@ set hlsearch
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
 "git clone https://github.com/tomasr/molokai ~/.vim/colors/
 syntax on
-"colorscheme molokai
-set t_Co=255
+colorscheme molokai
+set t_Co=256
 let g:molokai_original = 1
 let g:rehash256 = 1
 set background=dark
 
 " highligh setting
-highligh Normal ctermbg=none
-highligh Comment term=bold ctermfg=12
+"highligh Normal ctermbg=none
+"highligh Comment term=bold ctermfg=12
 
 " encoding
 set encoding=utf-8
-set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
+set fileencodings=utf-8,iso-2022-jp,euc-jp,sjis
 set fileformats=unix,dos,mac
 
 " Program Execution
