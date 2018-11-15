@@ -186,6 +186,7 @@ if [ $SH_LOAD = "tm" ] || [ $SH_LOAD = "sc" ]; then
   alias vi="vim"
   alias be="bundle exec"
   alias bi="bundle install --path vendor/bundle"
+  alias bp="bundle package --all"
   alias la="ls -al"
   alias ll="ls -l"
   alias ps="ps aux"
