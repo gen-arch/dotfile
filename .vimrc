@@ -10,7 +10,7 @@ Plugin 'VundleVim/Vundle.vim'
 " 導入したいプラグインを以下に列挙
 " Plugin '[Github Author]/[Github repo]' の形式で記入
 Plugin 'airblade/vim-gitgutter'
-"Plugin 'Shougo/neocomplete.vim'
+Plugin 'Shougo/neocomplete.vim'
 Plugin 'Shougo/neocomplcache.vim'
 Plugin 'Shougo/neocomplcache-rsense.vim'
 Plugin 'Shougo/Unite.vim'
@@ -237,7 +237,7 @@ nmap <Esc><Esc> :nohlsearch<CR><Esc>
 syntax enable
 filetype plugin indent on
 colorscheme molokai
-set t_Co=256
+set t_Co=255
 let g:molokai_original = 1
 let g:rehash256 = 1
 set background=dark
