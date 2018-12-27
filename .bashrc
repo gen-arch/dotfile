@@ -6,34 +6,9 @@ if [ -f /etc/bashrc ]; then
         . /etc/bashrc
 fi
 #==========================================================================================
-#magi configurarion
+#local configurarion
 #==========================================================================================
-if [[ $HOSTNAME =~ magi ]]; then
-    #exports
-    export PATH="/usr/lib64/qt-3.3/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/sbin:/home/tos.ito/bin"
-    unset GEM_PATH
-    unset GEM_HOME
-    #functions
-    _routers()
-    {
-      local cur
-        cur=${COMP_WORDS[COMP_CWORD]}
-          COMPREPLY=($(compgen -W '$(cat ~/.routers ~/.phone 2>/dev/null)' -- $cur))
-    }
-    #auto completes
-    complete -F _routers telnet
-    complete -F _routers ping
-    complete -F _routers traceroute
-    complete -F _routers ssh
-    complete -F _routers nslookup
-    complete -F _routers login
-fi
-#==========================================================================================
-# User specific aliases and functions
-#==========================================================================================
-#routers auto complete
-
-
+[ -f ~/.bashrc.local ] && source ~/.bashrc.local
 #==========================================================================================
 # Peco (https://github.com/peco/peco/releases/download/v0.5.3/peco_linux_amd64.tar.gz)
 #==========================================================================================
@@ -72,6 +47,7 @@ alias vi='vim'
 alias psp='ps aux | peco'
 alias bi='bundle install --path vendor/bundle'
 alias be='bundle exec'
+alias bp='bundle package --all'
 
 #==========================================================================================
 # Auto Complete

@@ -1,40 +1,58 @@
-set rtp+=~/.vim/bundle/Vundle.vim
-if !isdirectory(expand("~/.vim/bundle/Vundle.vim/"))
-  echo "install Vundle"
-  :call system("git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim")
+if &compatible
+  set nocompatible               " Be iMproved
 endif
 
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
+" Required:
+set runtimepath+=/home/gen/.vim/bundle/.//repos/github.com/Shougo/dein.vim
 
-" 導入したいプラグインを以下に列挙
-" Plugin '[Github Author]/[Github repo]' の形式で記入
-Plugin 'airblade/vim-gitgutter'
-Plugin 'Shougo/neocomplete.vim'
-Plugin 'Shougo/neocomplcache.vim'
-Plugin 'Shougo/neocomplcache-rsense.vim'
-Plugin 'Shougo/Unite.vim'
-Plugin 'Shougo/unite-outline'
-Plugin 'davidhalter/jedi-vim'
-Plugin 'thinca/vim-quickrun'
-Plugin 'kana/vim-smartinput'
-Plugin 'kana/vim-operator-user'
-Plugin 'kana/vim-textobj-user'
-Plugin 'kana/vim-operator-replace'
-Plugin 'rhysd/vim-operator-surround'
-Plugin 'andviro/flake8-vim'
-Plugin 'hynek/vim-python-pep8-indent'
-Plugin 'jmcantrell/vim-virtualenv'
-Plugin 'kana/vim-textobj-indent'
-Plugin 'bps/vim-textobj-python'
-Plugin 'scrooloose/nerdtree'
-Plugin 'tpope/vim-endwise'
-Plugin 'twitvim/twitvim'
-Plugin 'kana/vim-submode'
-Plugin 'slim-template/vim-slim'
-"Plugin 'sjl/badwolf'
-call vundle#end()
+" Required:
+if dein#load_state('/home/gen/.vim/bundle/./')
+  call dein#begin('/home/gen/.vim/bundle/./')
 
+  " Let dein manage dein
+  " Required:
+  call dein#add('/home/gen/.vim/bundle/.//repos/github.com/Shougo/dein.vim')
+
+  " Add or remove your plugins here like this:
+  call dein#add('Shougo/neosnippet.vim')
+  call dein#add('Shougo/neosnippet-snippets')
+  call dein#add ('airblade/vim-gitgutter')
+  call dein#add ('Shougo/neocomplete.vim')
+  call dein#add ('Shougo/neocomplcache.vim')
+  call dein#add ('Shougo/neocomplcache-rsense.vim')
+  call dein#add ('Shougo/Unite.vim')
+  call dein#add ('Shougo/unite-outline')
+  call dein#add ('davidhalter/jedi-vim')
+  call dein#add ('thinca/vim-quickrun')
+  call dein#add ('kana/vim-smartinput')
+  call dein#add ('kana/vim-operator-user')
+  call dein#add ('kana/vim-textobj-user')
+  call dein#add ('kana/vim-operator-replace')
+  call dein#add ('rhysd/vim-operator-surround')
+  call dein#add ('andviro/flake8-vim')
+  call dein#add ('hynek/vim-python-pep8-indent')
+  call dein#add ('jmcantrell/vim-virtualenv')
+  call dein#add ('kana/vim-textobj-indent')
+  call dein#add ('bps/vim-textobj-python')
+  call dein#add ('scrooloose/nerdtree')
+  call dein#add ('tpope/vim-endwise')
+  call dein#add ('twitvim/twitvim')
+  call dein#add ('kana/vim-submode')
+  call dein#add ('slim-template/vim-slim')
+
+  " Required:
+  call dein#end()
+  call dein#save_state()
+endif
+
+" Required:
+filetype plugin indent on
+syntax enable
+
+" If you want to install not installed plugins on startup.
+if dein#check_install()
+  call dein#install()
+endif
 
 
 "　その他のカスタム設定を以下に書く
@@ -192,7 +210,7 @@ map <C-l> :set nonumber<CR>
 " 現在の行を強調表示
 " set cursorline
 " " 現在の行を強調表示（縦）
-" set cursorcolumn"
+" set cursorcolumn
 " 行末の1文字先までカーソルを移動できるように
 set virtualedit=onemore
 " インデントはスマートインデント
