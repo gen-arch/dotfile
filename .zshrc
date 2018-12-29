@@ -8,6 +8,7 @@ if [ -z "$SH_LOAD" ]; then
       exit
   fi
 fi
+
 [ -f ~/.zlogin ] && source ~/.zlogin
 if [ $SH_LOAD = "tm" ] || [ $SH_LOAD = "sc" ]; then
   echo "include .zshrc"

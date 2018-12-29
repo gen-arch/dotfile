@@ -3,21 +3,33 @@ if &compatible
 endif
 
 " Required:
-set runtimepath+=/home/gen/.vim/bundle/.//repos/github.com/Shougo/dein.vim
+set runtimepath+=$HOME/.vim/bundle/.//repos/github.com/Shougo/dein.vim
+
 
 " Required:
-if dein#load_state('/home/gen/.vim/bundle/./')
-  call dein#begin('/home/gen/.vim/bundle/./')
-
-  " Let dein manage dein
-  " Required:
-  call dein#add('/home/gen/.vim/bundle/.//repos/github.com/Shougo/dein.vim')
+if dein#load_state('$HOME/.vim/bundle/./')
+  call dein#begin('$HOME/.vim/bundle/./')
+  call dein#add('$HOME/.vim/bundle/.//repos/github.com/Shougo/dein.vim')
 
   " Add or remove your plugins here like this:
+  if ((has('nvim')  || has('timers')) && has('python3')) && system('pip3 show neovim') !=# ''
+    call dein#add('Shougo/deoplete.nvim')
+    call dein#add('Shougo/neco-vim')
+    call dein#add('Shougo/neco-syntax')
+    call dein#add('Shougo/deoplete-rct')
+    call dein#add('ujihisa/neco-look')
+    call dein#add('zchee/deoplete-zsh')
+    call dein#add('zchee/deoplete-jedi')
+  if !has('nvim')
+      call dein#add('roxma/nvim-yarp')
+      call dein#add('roxma/vim-hug-neovim-rpc')
+  endif
+  elseif has('lua')
+    call dein#add('Shougo/neocomplete.vim')
+  endif
   call dein#add('Shougo/neosnippet.vim')
   call dein#add('Shougo/neosnippet-snippets')
   call dein#add ('airblade/vim-gitgutter')
-  call dein#add ('Shougo/neocomplete.vim')
   call dein#add ('Shougo/neocomplcache.vim')
   call dein#add ('Shougo/neocomplcache-rsense.vim')
   call dein#add ('Shougo/Unite.vim')
@@ -39,6 +51,11 @@ if dein#load_state('/home/gen/.vim/bundle/./')
   call dein#add ('twitvim/twitvim')
   call dein#add ('kana/vim-submode')
   call dein#add ('slim-template/vim-slim')
+  if dein#tap('deoplete.nvim')
+    let g:deoplete#enable_at_startup = 1
+  elseif dein#tap('neocomplete.vim')
+    let g:neocomplete#enable_at_startup = 1
+  endif
 
   " Required:
   call dein#end()
