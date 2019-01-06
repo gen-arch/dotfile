@@ -36,6 +36,7 @@
   repo = 'posva/vim-vue'
   on_ft = ['vue']
 
+# slim syntax
 [[plugins]]
   repo = 'slim-template/vim-slim'
   on_ft = ['slim']
@@ -58,17 +59,46 @@
     endfunction
   '''
 
+# vim起動中に実行
 [[plugins]]
   repo = 'thinca/vim-quickrun'
   on_i = 1
 
+#入力補助
 [[plugins]]
   repo = 'kana/vim-smartinput'
   on_i = 1
+  hook_post_source = '''
+  call smartinput#map_to_trigger('i', '<Space>', '<Space>', '<Space>')
+  call smartinput#define_rule({
+      \   'at'    : '(\%#)',
+      \   'char'  : '<Space>',
+      \   'input' : '<Space><Space><Left>',
+      \   })
 
-[[plugins]]
-  repo = 'jmcantrell/vim-virtualenv'
-  on_i = 1
+  call smartinput#define_rule({
+      \   'at'    : '( \%# )',
+      \   'char'  : '<BS>',
+      \   'input' : '<Del><BS>',
+      \   })
+  call smartinput#map_to_trigger('i', '#', '#', '#')
+
+  call smartinput#define_rule({
+      \   'at'       : '\%#',
+      \   'char'     : '#',
+      \   'input'    : '#{}<Left>',
+      \   'filetype' : ['ruby'],
+      \   'syntax'   : ['Constant', 'Special'],
+      \   })
+
+  call smartinput#map_to_trigger('i', '<Bar>', '<Bar>', '<Bar>')
+  call smartinput#define_rule({
+      \   'at' : '\({\|\<do\>\)\s*\%#',
+      \   'char' : '<Bar>',
+      \   'input' : '<Bar><Bar><Left>',
+      \   'filetype' : ['ruby'],
+      \    })'})'})
+      '''
 
 # Rubyのend補完
 [[plugins]]
@@ -80,6 +110,7 @@
   repo = 'szw/vim-tags'
   on_i = 1
 
+# toml syntax
 [[plugins]]
 repo = 'cespare/vim-toml'
 on_ft = ['toml']
