@@ -9,7 +9,7 @@ if !isdirectory(s:dein_repo_dir)
   call system('git clone https://github.com/Shougo/dein.vim ' . shellescape(s:dein_repo_dir))
 endif
 
-let &runtimepath = s:dein_repo_dir .",". &runtimepath
+let &runtimepath     = s:dein_repo_dir .",". &runtimepath
 let s:toml_dir       = expand('~/config/.vim/dein')
 let s:toml           = s:toml_dir . '/dein.toml'
 let s:lazy_toml      = s:toml_dir . '/dein_lazy.toml'
@@ -23,6 +23,7 @@ if dein#load_state(s:dein_dir)
 
   " 遅延読み込みしたいプラグイン群
   call dein#load_toml(s:lazy_toml, {'lazy': 1})
+  call dein#add('Shougo/vimproc.vim', {'build' : 'make'})
 
   " Add or remove your plugins here like this:
   if ((has('nvim')  || has('timers')) && has('python3')) && system('pip3 show neovim') !=# ''
@@ -34,6 +35,7 @@ if dein#load_state(s:dein_dir)
   elseif has('lua')
     call dein#add ('Shougo/neocomplete.vim')
   endif
+
   if dein#tap('neocomplete.vim')
     let g:neocomplete#enable_at_startup = 1
   endif
@@ -151,3 +153,4 @@ autocmd BufNewFile,BufRead *.py nnoremap <C-e> :!python %
 autocmd BufNewFile,BufRead *.pl nnoremap <C-e> :!perl %
 autocmd BufNewFile,BufRead *.slim setlocal filetype=slim
 autocmd BufNewFile,BufRead *.vue set filetype=html
+autocmd BufNewFile,BufRead *.toml set filetype=toml

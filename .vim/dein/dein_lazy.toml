@@ -79,3 +79,7 @@
 [[plugins]]
   repo = 'szw/vim-tags'
   on_i = 1
+
+[[plugins]]
+repo = 'cespare/vim-toml'
+on_ft = ['toml']
