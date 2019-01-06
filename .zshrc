@@ -8,6 +8,7 @@ if [ -z "$SH_LOAD" ]; then
       #exit
   fi
 fi
+
 [ -f ~/.zlogin ] && source ~/.zlogin
 if [ $SH_LOAD = "tm" ] || [ $SH_LOAD = "sc" ]; then
   echo "include .zshrc"
@@ -137,6 +138,7 @@ if [ $SH_LOAD = "tm" ] || [ $SH_LOAD = "sc" ]; then
   #PATH追加
   export PATH=$PATH:$HOME/bin
   export SHELL="/usr/bin/zsh"
+  export XDG_CONFIG_HOME="$HOME/config"
   #=======================================
 
   #=======================================
@@ -183,7 +185,7 @@ if [ $SH_LOAD = "tm" ] || [ $SH_LOAD = "sc" ]; then
   #=======================================
   #エイリアス
   #=======================================
-  alias vi="vim"
+  alias vi="nvim"
   alias be="bundle exec"
   alias bi="bundle install --path vendor/bundle"
   alias bp="bundle package --all"

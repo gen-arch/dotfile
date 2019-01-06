@@ -1,0 +1,65 @@
+[[plugins]]
+repo = 'Shougo/deoplete.nvim'
+on_i = 1
+hook_add = '''
+  let g:deoplete#enable_at_startup = 1
+'''
+
+hook_post_source = '''
+call deoplete#custom#option({
+    \ 'deoplete-options-auto_complete': v:true,
+    \ 'auto_complete_delay': 0,
+    \ 'smart_case': v:true,
+    \ })
+'''
+
+[[plugins]]
+repo = 'Shougo/neco-vim'
+on_i = 1
+
+[[plugins]]
+repo = 'Shougo/neco-syntax'
+on_i = 1
+
+[[plugins]]
+repo = 'ujihisa/neco-look'
+on_i = 1
+
+[[plugins]]
+repo = 'wokalski/autocomplete-flow'
+hook_source = 'let g:autocomplete_flow#insert_paren_after_function = 0'
+on_i = 1
+
+#[ruby]----------------------------------------------------------
+[[plugins]]
+repo = 'osyo-manga/vim-monster'
+on_i = 1
+hook_add = '''
+let g:monster#completion#rcodetools#backend = "async_rct_complete"
+let g:deoplete#sources#omni#input_patterns = {
+    \ "ruby" : '[^. *\t]\.\w*\|\h\w*::',
+    \}
+'''
+
+[[plugins]]
+repo = 'Shougo/deoplete-rct'
+on_ft = ['ruby']
+
+[[plugins]]
+repo = 'fishbullet/deoplete-ruby'
+on_ft = ['ruby']
+
+#----------------------------------------------------------------
+
+[[plugins]]
+repo = 'zchee/deoplete-zsh'
+on_ft = ['zsh']
+
+[[plugins]]
+repo = 'zchee/deoplete-jedi'
+on_ft = ['python']
+
+[[plugins]]
+repo = 'carlitux/deoplete-ternjs'
+on_ft = ['javascript']
+
