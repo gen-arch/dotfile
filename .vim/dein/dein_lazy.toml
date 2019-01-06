@@ -1,0 +1,81 @@
+# neosnippet
+[[plugins]]
+  repo = 'Shougo/neosnippet-snippets'
+
+[[plugins]]
+  repo = 'Shougo/context_filetype.vim'
+
+[[plugins]]
+  repo = 'Shougo/neosnippet.vim'
+  depends = ['neosnippet-snippets', 'context_filetype.vim']
+  on_i = 1
+  hook_post_source = '''
+    " Plugin key-mappings.
+    " Note: It must be "imap" and "smap".  It uses <Plug> mappings.
+    imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+    smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+    xmap <C-k>     <Plug>(neosnippet_expand_target)
+
+    " SuperTab like snippets behavior.
+    " Note: It must be "imap" and "smap".  It uses <Plug> mappings.
+    "imap <expr><TAB>
+    " \ pumvisible() ? "\<C-n>" :
+    " \ neosnippet#expandable_or_jumpable() ?
+    " \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+    smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+    \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+
+    " For conceal markers.
+    if has('conceal')
+      set conceallevel=2 concealcursor=niv
+    endif
+  '''
+
+#Vim syntax highlighting for Vue components.
+[[plugins]]
+  repo = 'posva/vim-vue'
+  on_ft = ['vue']
+
+[[plugins]]
+  repo = 'slim-template/vim-slim'
+  on_ft = ['slim']
+
+#vim twiter
+[[plugins]]
+  repo = 'twitvim/twitvim'
+  on_i = 1
+  hook_source = '''
+    let twitvim_count = 40
+    nnoremap ,tp :<C-u>PosttoTwitter<CR>
+    nnoremap ,tf :<C-u>FriendsTwitter<CR><C-w>j
+    nnoremap ,rf :<C-u>RefreshTwitter<CR><C-w>j
+    nnoremap ,tu :<C-u>UserTwitter<CR><C-w>j
+    nnoremap ,tr :<C-u>RepliesTwitter<CR><C-w>j
+    nnoremap ,tn :<C-u>NextTwitter<CR>
+    autocmd FileType twitvim call s:twitvim_my_settings()
+    function! s:twitvim_my_settings()
+      set nowrap
+    endfunction
+  '''
+
+[[plugins]]
+  repo = 'thinca/vim-quickrun'
+  on_i = 1
+
+[[plugins]]
+  repo = 'kana/vim-smartinput'
+  on_i = 1
+
+[[plugins]]
+  repo = 'jmcantrell/vim-virtualenv'
+  on_i = 1
+
+# Rubyのend補完
+[[plugins]]
+  repo = 'tpope/vim-endwise'
+  on_i = 1
+
+# Rubyのメソッドの定義元にジャンプ
+[[plugins]]
+  repo = 'szw/vim-tags'
+  on_i = 1
