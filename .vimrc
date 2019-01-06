@@ -3,15 +3,15 @@ if &compatible
 endif
 
 " Required:
-set runtimepath+=/home/gen/.vim/bundle/.//repos/github.com/Shougo/dein.vim
+set runtimepath+=$HOME/.vim/bundle/.//repos/github.com/Shougo/dein.vim
 
 " Required:
-if dein#load_state('/home/gen/.vim/bundle/./')
-  call dein#begin('/home/gen/.vim/bundle/./')
+if dein#load_state("$HOME/.vim/bundle/./")
+  call dein#begin('$HOME/.vim/bundle/./')
 
   " Let dein manage dein
   " Required:
-  call dein#add('/home/gen/.vim/bundle/.//repos/github.com/Shougo/dein.vim')
+  call dein#add('$HOME/.vim/bundle/.//repos/github.com/Shougo/dein.vim')
 
   " Add or remove your plugins here like this:
   call dein#add('Shougo/neosnippet.vim')
@@ -53,6 +53,8 @@ syntax enable
 if dein#check_install()
   call dein#install()
 endif
+
+
 
 
 "　その他のカスタム設定を以下に書く
@@ -255,7 +257,7 @@ nmap <Esc><Esc> :nohlsearch<CR><Esc>
 syntax enable
 filetype plugin indent on
 colorscheme molokai
-set t_Co=255
+set t_Co=256
 let g:molokai_original = 1
 let g:rehash256 = 1
 set background=dark
