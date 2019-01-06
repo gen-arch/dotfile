@@ -152,5 +152,4 @@ autocmd BufNewFile,BufRead *.rb nnoremap <C-e> :!ruby %
 autocmd BufNewFile,BufRead *.py nnoremap <C-e> :!python %
 autocmd BufNewFile,BufRead *.pl nnoremap <C-e> :!perl %
 autocmd BufNewFile,BufRead *.slim setlocal filetype=slim
-autocmd BufNewFile,BufRead *.vue set filetype=html
 autocmd BufNewFile,BufRead *.toml set filetype=toml

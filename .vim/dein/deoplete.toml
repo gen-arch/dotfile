@@ -1,7 +1,16 @@
 [[plugins]]
 repo = 'Shougo/deoplete.nvim'
-hook_source = '''
+hook_add = '''
   let g:deoplete#enable_at_startup = 1
+  set completeopt+=noinsert
+'''
+
+hook_post_source = '''
+call deoplete#custom#option({
+    \ 'deoplete-options-auto_complete': v:true,
+    \ 'auto_complete_delay': 1,
+    \ 'smart_case': v:true,
+    \ })
 '''
 
 [[plugins]]
@@ -23,6 +32,16 @@ on_i = 1
 
 #[ruby]----------------------------------------------------------
 [[plugins]]
+repo = 'osyo-manga/vim-monster'
+on_i = 1
+hook_add = '''
+let g:monster#completion#rcodetools#backend = "async_rct_complete"
+let g:deoplete#sources#omni#input_patterns = {
+    \ "ruby" : '[^. *\t]\.\w*\|\h\w*::',
+    \}
+'''
+
+[[plugins]]
 repo = 'Shougo/deoplete-rct'
 on_ft = ['ruby']
 
@@ -30,9 +49,6 @@ on_ft = ['ruby']
 repo = 'fishbullet/deoplete-ruby'
 on_ft = ['ruby']
 
-[[plugins]]
-repo = 'osyo-manga/vim-monster'
-on_ft = ['ruby']
 #----------------------------------------------------------------
 
 [[plugins]]

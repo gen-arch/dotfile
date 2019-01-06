@@ -1,0 +1,2 @@
+hash = {"aaa": "bbb"}
+hash.
