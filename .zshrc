@@ -185,7 +185,11 @@ if [ $SH_LOAD = "tm" ] || [ $SH_LOAD = "sc" ]; then
   #=======================================
   #エイリアス
   #=======================================
-  alias vi="nvim"
+  alias vi="vim"
+  if type nvim > /dev/null &2>1; then
+    alias vi="nvim"
+    export EDITOR=nvim
+  fi
   alias be="bundle exec"
   alias bi="bundle install --path vendor/bundle"
   alias bp="bundle package --all"
