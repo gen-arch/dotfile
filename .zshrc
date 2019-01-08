@@ -186,7 +186,7 @@ if [ $SH_LOAD = "tm" ] || [ $SH_LOAD = "sc" ]; then
   #エイリアス
   #=======================================
   alias vi="vim"
-  if type nvim > /dev/null &2>1; then
+  if type nvim &> /dev/null; then
     alias vi="nvim"
     export EDITOR=nvim
   fi
