@@ -39,6 +39,10 @@ if dein#load_state(s:dein_dir)
     let g:neocomplete#enable_at_startup = 1
   endif
 
+  if system('uname -a') =~ "Microsoft" && dein#tap('deoplete-ruby.vim')
+    call dein#disable('deoplete-ruby.vim')
+  endif
+
   call dein#end()
   call dein#save_state()
 endif
@@ -133,6 +137,7 @@ nnoremap <C-l> <C-w>l
 "git clone https://github.com/tomasr/molokai ~/.vim/colors/
 syntax enable
 filetype plugin indent on
+let mapleader = ","
 colorscheme molokai
 set t_Co=256
 let g:molokai_original = 1
@@ -148,5 +153,6 @@ set fileformats=unix,dos,mac
 autocmd BufNewFile,BufRead *.rb nnoremap <C-e> :!ruby %
 autocmd BufNewFile,BufRead *.py nnoremap <C-e> :!python %
 autocmd BufNewFile,BufRead *.pl nnoremap <C-e> :!perl %
+autocmd BufNewFile,BufRead *.sh nnoremap <C-e> :!source %
 autocmd BufNewFile,BufRead *.slim setlocal filetype=slim
 autocmd BufNewFile,BufRead *.toml setlocal filetype=toml
