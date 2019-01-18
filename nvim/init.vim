@@ -1,1 +1,1 @@
-/home/gen/config/.vimrc
+/home/tos.ito/config/.vimrc

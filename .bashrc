@@ -21,13 +21,14 @@ alias fc="find_cd"
 #==========================================================================================
 #Export
 #==========================================================================================
-export PATH=$PATH:/sbin:/usr/sbin # パス
+export PATH=$PATH:/sbin:/usr/sbin:$HOME/bin # パス
 export PAGER='/usr/bin/lv -c' # man とかで使われる
 export EDITOR='vim' # visudo とかで使われる
 export HISTSIZE=100000 # これだけコマンド履歴を残す
 export LANG='ja_JP.UTF-8' # 以下 3 つ文字コード
 export LC_ALL='ja_JP.UTF-8'
 export LC_MESSAGES='ja_JP.UTF-8'
+export XDG_CONFIG_HOME="$HOME/config"
 #==========================================================================================
 #Alias
 #==========================================================================================
@@ -43,11 +44,16 @@ alias cp='cp -i'
 alias sc='screen'
 alias ps='ps --sort=start_time'
 alias be='bundle exec'
-alias vi='vim'
 alias psp='ps aux | peco'
 alias bi='bundle install --path vendor/bundle'
 alias be='bundle exec'
 alias bp='bundle package --all'
+alias vi='vim'
+
+if type nvim &> /dev/null; then
+  alias vi="nvim"
+  export EDITOR=nvim
+fi
 
 #==========================================================================================
 # Auto Complete
@@ -68,4 +74,13 @@ export PS1='\[\033[36;40;1m\] [\u@\h]\[\033[01;34m\] \w\[\033[00m\] \[\033[31m\]
 if [[ -e $HOME/.rbenv ]]; then
     export PATH="$HOME/.rbenv/bin:$PATH"
     eval "$(rbenv init -)"
+fi
+
+#==========================================================================================
+#Pyenv
+#==========================================================================================
+if [ -e ~/.pyenv ]; then
+  export PYENV_ROOT="$HOME/.pyenv"
+  export PATH="$PYENV_ROOT/bin:$PATH"
+  eval "$(pyenv init -)"
 fi
