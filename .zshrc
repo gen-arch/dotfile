@@ -138,6 +138,8 @@ if [ $SH_LOAD = "tm" ] || [ $SH_LOAD = "sc" ]; then
   #PATH追加
   export PATH=$PATH:$HOME/bin
   export SHELL="/usr/bin/zsh"
+
+  #nvim
   export XDG_CONFIG_HOME="$HOME/config"
   #=======================================
 
