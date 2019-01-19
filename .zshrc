@@ -218,7 +218,25 @@ if [ $SH_LOAD = "tm" ] || [ $SH_LOAD = "sc" ]; then
   zstyle ':vcs_info:*' formats "%F{cyan}%c%u(%b)%f" #通常
   zstyle ':vcs_info:*' actionformats '[%b|%a]' #rebase 途中,merge コンフリクト等 formats 外の表示
   #=======================================
+  #=======================================
+  #fzf(https://github.com/junegunn/fzf)
+  #install(git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf)
+  #~/.fzf/install
+  #=======================================
+  [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+  #=======================================
+  #zaw(https://github.com/zsh-users/zaw)
+  #install(git clone git://github.com/zsh-users/zaw.git)
+  #=======================================
+  source ~/zaw/zaw.zsh
+
+  #=======================================
+  #zplug(https://github.com/zplug/zplug)
+  #install(curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh)
+  #=======================================
+  source ~/.zplug/init.zsh
+  zplug "b4b4r07/enhancd", use:enhancd.sh
   #=======================================
   #プロンプト
   #=======================================
@@ -247,3 +265,4 @@ if [ $SH_LOAD = "tm" ] || [ $SH_LOAD = "sc" ]; then
   export SH_LOAD="exit"
   cd ~
 fi
+
