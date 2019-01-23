@@ -174,6 +174,10 @@ if [ $SH_LOAD = "tm" ] || [ $SH_LOAD = "sc" ]; then
   #=======================================
   #関数
   #=======================================
+  function find_cd() {
+    cd "$(find . -type d | peco)"
+  }
+
   function peco-lscd {
     local dir="$( ls | peco )"
     if [ -f "$dir" ]; then
@@ -187,20 +191,7 @@ if [ $SH_LOAD = "tm" ] || [ $SH_LOAD = "sc" ]; then
   #=======================================
   #エイリアス
   #=======================================
-  alias vi="vim"
-  if type nvim &> /dev/null; then
-    alias vi="nvim"
-    export EDITOR=nvim
-  fi
-  alias be="bundle exec"
-  alias bi="bundle install --path vendor/bundle"
-  alias bp="bundle package --all"
-  alias la="ls -al"
-  alias ll="ls -l"
-  alias ps="ps aux"
-  alias psp="ps aux | peco"
-  alias pls=peco-lscd
-
+  [ -f ~/config/.aliasrc ] && source ~/config/.aliasrc
   #=======================================
   #モジュール(http://zsh.sourceforge.net/Doc/Release/Completion-System.html#Standard-Styles)
   #=======================================

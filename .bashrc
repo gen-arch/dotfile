@@ -17,7 +17,16 @@ function find_cd() {
     cd "$(find . -type d | peco)"
 }
 
-alias fc="find_cd"
+function peco-lscd {
+  local dir="$( ls | peco )"
+  if [ -f "$dir" ]; then
+    vi "$dir"
+  else
+    if [ ! -z "$dir" ] ; then
+      cd "$dir"
+    fi
+  fi
+}
 #==========================================================================================
 #Export
 #==========================================================================================
@@ -32,32 +41,7 @@ export XDG_CONFIG_HOME="$HOME/config"
 #==========================================================================================
 #Alias
 #==========================================================================================
-alias grep='grep --color'
-alias df='df -h'
-alias login='sh ~/programs/login.sh'
-alias ls='ls -CF'
-alias ll='ls -AlFh --show-control-chars --color=auto'
-alias la='ls -CFal'
-alias mv='mv -i'
-alias rm='rm -i'
-alias cp='cp -i'
-alias sc='screen'
-alias ps='ps --sort=start_time'
-alias be='bundle exec'
-alias psp='ps aux | peco'
-alias bi='bundle install --path vendor/bundle'
-alias be='bundle exec'
-alias bp='bundle package --all'
-alias vi='vim'
-
-if type nvim &> /dev/null; then
-  alias vi="nvim"
-  export EDITOR=nvim
-fi
-
-#==========================================================================================
-# Auto Complete
-#==========================================================================================
+  [ -f ~/config/.aliasrc ] && source ~/config/.aliasrc
 
 #==========================================================================================
 #Prompt configurarion

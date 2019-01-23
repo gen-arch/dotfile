@@ -1,0 +1,24 @@
+#!/bin/sh
+
+alias vi="vim"
+if type nvim &> /dev/null; then
+  alias vi="nvim"
+  export EDITOR=nvim
+fi
+alias grep='grep --color'
+alias be="bundle exec"
+alias bi="bundle install --path vendor/bundle"
+alias bigem="bundle install --path .bundle"
+alias bp="bundle package --all"
+alias mv='mv -i'
+alias rm='rm -i'
+alias cp='cp -i'
+alias df='df -h'
+alias ls='ls -CF'
+alias la='ls -CFal'
+alias ps='ps --sort=start_time'
+alias ll='ls -AlFh --show-control-chars --color=auto'
+alias ps="ps aux"
+alias psp="ps aux | peco"
+alias pls=peco-lscd
+alias fc="find_cd"
