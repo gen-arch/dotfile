@@ -21,4 +21,5 @@ alias ll='ls -AlFh --show-control-chars --color=auto'
 alias ps="ps aux"
 alias psp="ps aux | peco"
 alias pls=peco-lscd
+alias lcd=find_cd
 alias fc="find_cd"

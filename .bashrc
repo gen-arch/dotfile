@@ -31,7 +31,6 @@ function peco-lscd {
 #Export
 #==========================================================================================
 export PATH=$PATH:/sbin:/usr/sbin:$HOME/bin # パス
-export PAGER='/usr/bin/lv -c' # man とかで使われる
 export EDITOR='vim' # visudo とかで使われる
 export HISTSIZE=100000 # これだけコマンド履歴を残す
 export LANG='ja_JP.UTF-8' # 以下 3 つ文字コード
