@@ -1,6 +1,13 @@
-rm -r ~/config/nvim/.vim
-rm ~/config/nvim/init.vim
+rm ~/dotfiles/nvim/.vim
+rm ~/dotfiles/nvim/init.vim
+rm ~/.vimrc
+rm ~/.zshrc
+rm ~/.zlogin
+rm ~/.tmux.conf
 
-ln -s ~/.vim ~/config/nvim/
-ln -s ~/config/.vimrc ~/config/nvim/init.vim
-
+ln -s ~/.vim ~/dotfiles/nvim/
+ln -s ~/dotfiles/.vimrc ~/dotfiles/nvim/init.vim
+ln -s ~/dotfiles/.vimrc ~/
+ln -s ~/dotfiles/.zshrc ~/
+ln -s ~/dotfiles/.zlogin ~/
+ln -s ~/dotfiles/.tmux.conf ~/

@@ -1,1 +1,1 @@
-/home/gen/config/.vimrc
+/home/gen/dotfiles/.vimrc

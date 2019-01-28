@@ -140,7 +140,7 @@ if [ $SH_LOAD = "tm" ] || [ $SH_LOAD = "sc" ]; then
   export SHELL="/usr/bin/zsh"
 
   #nvim
-  export XDG_CONFIG_HOME="$HOME/config"
+  export XDG_CONFIG_HOME="$HOME/dotfiles"
   #=======================================
 
   #=======================================
@@ -191,7 +191,7 @@ if [ $SH_LOAD = "tm" ] || [ $SH_LOAD = "sc" ]; then
   #=======================================
   #エイリアス
   #=======================================
-  [ -f ~/config/.aliasrc ] && source ~/config/.aliasrc
+  [ -f ~/dotfiles/.aliasrc ] && source ~/dotfiles/.aliasrc
   #=======================================
   #モジュール(http://zsh.sourceforge.net/Doc/Release/Completion-System.html#Standard-Styles)
   #=======================================
