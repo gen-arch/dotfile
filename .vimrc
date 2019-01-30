@@ -140,8 +140,8 @@ filetype plugin indent on
 let mapleader = ","
 colorscheme molokai
 set t_Co=256
-let g:molokai_original = 1
 let g:rehash256 = 1
+let g:molokai_original = 1
 set background=dark
 
 " encoding
