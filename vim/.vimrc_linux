@@ -1,0 +1,11 @@
+" 現在の行を強調表示
+set cursorline
+" 現在の行を強調表示（縦）
+set cursorcolumn
+
+" colorscheme
+colorscheme molokai
+set t_Co=256
+let g:molokai_original = 1
+let g:rehash256 = 1
+set background=dark

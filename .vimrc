@@ -77,10 +77,6 @@ set clipboard=unnamed
 " 行番号を表示
 set number
 map <C-l> :set nonumber<CR>
-" 現在の行を強調表示
-" set cursorline
-" " 現在の行を強調表示（縦）
-" set cursorcolumn
 " 行末の1文字先までカーソルを移動できるように
 set virtualedit=onemore
 " インデントはスマートインデント
@@ -138,11 +134,6 @@ nnoremap <C-l> <C-w>l
 syntax enable
 filetype plugin indent on
 let mapleader = ","
-colorscheme molokai
-set t_Co=256
-let g:rehash256 = 1
-let g:molokai_original = 1
-set background=dark
 
 " encoding
 set encoding=utf-8
@@ -156,3 +147,9 @@ autocmd BufNewFile,BufRead *.pl nnoremap <C-e> :!perl %
 autocmd BufNewFile,BufRead *.sh nnoremap <C-e> :!source %
 autocmd BufNewFile,BufRead *.slim setlocal filetype=slim
 autocmd BufNewFile,BufRead *.toml setlocal filetype=toml
+
+if system("uname -v") =~ "Microsoft"
+  source ~/dotfiles/vim/.vimrc_wsl
+else
+  source ~/dotfiles/vim/.vimrc_linux
+endif
