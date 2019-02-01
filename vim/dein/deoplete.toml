@@ -4,11 +4,11 @@ on_i = 1
 hook_source = '''
 let g:deoplete#enable_at_startup = 1
 '''
-hook_post_source = '''
-call deoplete#custom#option({
-    \ 'deoplete-options-auto_complete': v:true,
-    \ })
-'''
+# hook_post_source = '''
+# call deoplete#custom#option({
+    # \ 'deoplete-options-auto_complete': v:true,
+    # \ })
+# '''
 
 [[plugins]]
 repo = 'Shougo/neco-vim'
