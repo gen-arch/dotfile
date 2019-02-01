@@ -96,8 +96,6 @@ set wildmode=list:longest
 nnoremap j gj
 nnoremap k gk
 
-set foldmethod=marker
-
 " Tab系
 " Tab文字を半角スペースにする
 set expandtab
