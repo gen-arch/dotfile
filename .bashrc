@@ -36,17 +36,17 @@ export HISTSIZE=100000 # これだけコマンド履歴を残す
 export LANG='ja_JP.UTF-8' # 以下 3 つ文字コード
 export LC_ALL='ja_JP.UTF-8'
 export LC_MESSAGES='ja_JP.UTF-8'
-export XDG_CONFIG_HOME="$HOME/config"
+export XDG_CONFIG_HOME="$HOME/dotfiles"
 #==========================================================================================
 #Alias
 #==========================================================================================
-  [ -f ~/config/.aliasrc ] && source ~/config/.aliasrc
+  [ -f ~/dotfiles/.aliasrc ] && source ~/dotfiles/.aliasrc
 
 #==========================================================================================
 #Prompt configurarion
 #==========================================================================================
-source ${HOME}/config/git-prompt.sh
-source ${HOME}/config/git-completion.bash
+source ${HOME}/dotfiles/git-prompt.sh
+source ${HOME}/dotfiles/git-completion.bash
 GIT_PS1_SHOWDIRTYSTATE=true
 #export PS1='\[\033[32m\]\u@\h\[\033[00m\]:\[\033[34m\]\w\[\033[31m\]$(__git_ps1)\[\033[00m\]\$ '
 export PS1='\[\033[36;40;1m\] [\u@\h]\[\033[01;34m\] \w\[\033[00m\] \[\033[31m\]$(__git_ps1)\[\033[00m\]\[\033[01;34m\]\$\[\033[00m\]'
