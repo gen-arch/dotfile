@@ -1,1 +1,1 @@
-/home/tos.ito/dotfiles/.vimrc
+/home/gen/dotfiles/.vimrc
