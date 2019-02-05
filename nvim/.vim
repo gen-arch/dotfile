@@ -1,1 +1,1 @@
-/home/tos/.vim
+/home/gen/.vim

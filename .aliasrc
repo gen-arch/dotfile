@@ -15,7 +15,7 @@ alias rm='rm -i'
 alias cp='cp -i'
 alias df='df -h'
 alias ls='ls -CF'
-alias la='ls -CFal'
+alias la='ls -CFal --show-control-chars --color=auto'
 alias ps='ps --sort=start_time'
 alias ll='ls -AlFh --show-control-chars --color=auto'
 alias ps="ps aux"
