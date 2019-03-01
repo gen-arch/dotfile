@@ -41,6 +41,11 @@ on_ft = ['vue']
 repo = 'slim-template/vim-slim'
 on_ft = ['slim']
 
+#type script syntax
+[[plugins]]
+repo = 'leafgarland/typescript-vim'
+on_ft = ['typescript']
+
 #vim twiter
 [[plugins]]
 repo = 'twitvim/twitvim'

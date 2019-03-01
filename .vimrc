@@ -25,22 +25,25 @@ if dein#load_state(s:dein_dir)
   call dein#load_toml(s:lazy_toml, {'lazy': 1})
 
   " Add or remove your plugins here like this:
-  if ((has('nvim')  || has('timers')) && has('python3')) && system('pip3 show neovim') !=# ''
+  if ((has('nvim')  || has('timers')) && has('python3')) && system('pip3 show neovim') !=# ''  && system('uname -a') !~ "Microsoft"
     call dein#load_toml(s:deoplete_toml, {'lazy': 1})
     if !has('nvim')
       call dein#add ('roxma/nvim-yarp')
       call dein#add ('roxma/vim-hug-neovim-rpc')
     endif
-  elseif has('lua')
+  elseif has('lua') || system('uname -a') =~ "Microsoft"
     call dein#add ('Shougo/neocomplete.vim')
   endif
 
   if dein#tap('neocomplete.vim')
+    " Disable AutoComplPop.
+    let g:acp_enableAtStartup = 0
+    " " Use neocomplete.
     let g:neocomplete#enable_at_startup = 1
-  endif
-
-  if system('uname -a') =~ "Microsoft" && dein#tap('deoplete-ruby.vim')
-    call dein#disable('deoplete-ruby.vim')
+    " " Use smartcase.
+    let g:neocomplete#enable_smart_case = 1
+    " " Set minimum syntax keyword length.
+    let g:neocomplete#sources#syntax#min_keyword_length = 3"
   endif
 
   call dein#end()
