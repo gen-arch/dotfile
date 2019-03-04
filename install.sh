@@ -14,6 +14,13 @@ pyenv(){
   fi
 }
 
+ndenv(){
+  if [[ ! -e ~/.ndenv ]];then
+    git clone https://github.com/riywo/ndenv ~/.ndenv
+    git clone https://github.com/riywo/node-build.git ~/.ndenv/plugins/node-build
+  fi
+}
+
 
 #private
 cmd_check(){
@@ -28,6 +35,7 @@ main()
 {
   pyenv
   rbenv
+  ndenv
 }
 
 main
