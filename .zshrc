@@ -254,6 +254,10 @@ if [ -e ~/.pyenv ]; then
   export PATH="$PYENV_ROOT/bin:$PATH"
   eval "$(pyenv init -)"
 fi
+if [ -e ~/.ndenv ]; then
+  export PATH="$HOME/.ndenv/bin:$PATH"
+  eval "$(ndenv init -)"
+fi
 export SH_LOAD="exit"
 cd ~
 
