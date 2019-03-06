@@ -7,8 +7,7 @@ if type nvim &> /dev/null; then
 fi
 alias grep='grep --color'
 alias be="bundle exec"
-alias bi="bundle install --path vendor/bundle"
-alias bigem="bundle install --path .bundle"
+alias bi="bundle install --path .bundle"
 alias bp="bundle package --all"
 alias mv='mv -i'
 alias rm='rm -i'
