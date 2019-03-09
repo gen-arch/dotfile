@@ -3,9 +3,12 @@ if [ -z "$SH_LOAD" ]; then
   P_TM=`ps aux | awk -v "pid=$PPID" '$2 == pid{ print $11 }'`
   if [[ ! $P_TM =~ tmux ]] && [ -f ~/.tmux.conf ];
   then
+    if [[ ! $P_TM =~ sshd ]];
+    then
       echo "start tmux"
       tmux
       exit
+    fi
   fi
 fi
 
