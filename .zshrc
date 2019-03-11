@@ -139,7 +139,6 @@ export LANG=ja_JP.UTF-8
 
 #PATH追加
 export PATH=$PATH:$HOME/bin
-export SHELL="/usr/bin/zsh"
 
 #nvim
 export XDG_CONFIG_HOME="$HOME/dotfiles"
