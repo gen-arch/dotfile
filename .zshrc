@@ -131,8 +131,6 @@ export HISTFILE=~/.zhistory
 # メモリに保存する履歴の件数を指定する
 export HISTSIZE=1000
 
-# ファイルに保存する履歴の件数を指定する
-export SAVEHIST=1000000
 
 # 文字コードを設定する
 export LANG=ja_JP.UTF-8
@@ -207,17 +205,17 @@ zstyle ':completion:*:default' menu select=2
 zstyle ':completion:*:descriptions' format '%F{yellow}-- %d --%f'
 zstyle ':completion:*:options' description 'yes'
 zstyle ':vcs_info:git:*' check-for-changes true #formats 設定項目で %c,%u が使用可
-  zstyle ':vcs_info:git:*' stagedstr "%F{green}!" #commit されていないファイルがある
-  zstyle ':vcs_info:git:*' unstagedstr "%F{magenta}+" #add されていないファイルがある
-  zstyle ':vcs_info:*' formats "%F{cyan}%c%u(%b)%f" #通常
-  zstyle ':vcs_info:*' actionformats '[%b|%a]' #rebase 途中,merge コンフリクト等 formats 外の表示
-  #=======================================
-  #=======================================
-  #fzf(https://github.com/junegunn/fzf)
-  #install(git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf)
-  #~/.fzf/install
-  #=======================================
-  [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+zstyle ':vcs_info:git:*' stagedstr "%F{green}!" #commit されていないファイルがある
+zstyle ':vcs_info:git:*' unstagedstr "%F{magenta}+" #add されていないファイルがある
+zstyle ':vcs_info:*' formats "%F{cyan}%c%u(%b)%f" #通常
+zstyle ':vcs_info:*' actionformats '[%b|%a]' #rebase 途中,merge コンフリクト等 formats 外の表示
+#=======================================
+#=======================================
+#fzf(https://github.com/junegunn/fzf)
+#install(git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf)
+#~/.fzf/install
+#=======================================
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 #=======================================
 #zaw(https://github.com/zsh-users/zaw)

@@ -6,10 +6,6 @@ repo = 'Shougo/dein.vim'
 [[plugins]]
 repo = 'wsdjeg/dein-ui.vim'
 
-# 非同期処理全般
-[[plugins]]
-repo = 'Shougo/vimproc.vim'
-
 # statusline
 [[plugins]]
 repo = 'itchyny/lightline.vim'
@@ -30,16 +26,6 @@ nmap j <Plug>(accelerated_jk_gj)
 nmap k <Plug>(accelerated_jk_gk)
 '''
 
-# /検索強化
-[[plugins]]
-repo = 'osyo-manga/vim-anzu'
-hook_add = '''
-nmap n nzz<Plug>(anzu-update-search-status)
-nmap N Nzz<Plug>(anzu-update-search-status)
-nmap * <Plug>(anzu-star)
-nmap # <Plug>(anzu-sharp)
-nmap <silent> <ESC><ESC> :<C-u>nohlsearch<CR><Plug>(anzu-clear-search-status)
-'''
 
 # f検索強化
 [[plugins]]
@@ -69,8 +55,6 @@ let g:unite_enable_start_insert=1
 noremap <C-P> :Unite buffer<CR>
 " ファイル一覧
 noremap <C-N> :Unite -buffer-name=file file<CR>
-" 最近使ったファイルの一覧
-noremap <C-Z> :Unite file_mru<CR>
 " sourcesを「今開いているファイルのディレクトリ」とする
 noremap :uff :<C-u>UniteWithBufferDir file -buffer-name=file<CR>
 " ウィンドウを分割して開く
@@ -87,10 +71,6 @@ au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
 [[plugins]]
 repo = 'Shougo/unite-outline'
 depends = 'Unite'
-
-#git差分表示
-[[plugins]]
-repo = 'airblade/vim-gitgutter'
 
 [[plugins]]
 repo = 'scrooloose/nerdtree'

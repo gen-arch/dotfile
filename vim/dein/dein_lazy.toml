@@ -46,23 +46,6 @@ on_ft = ['slim']
 repo = 'leafgarland/typescript-vim'
 on_ft = ['typescript']
 
-#vim twiter
-[[plugins]]
-repo = 'twitvim/twitvim'
-hook_source = '''
-let twitvim_count = 40
-nnoremap ,tp :<C-u>PosttoTwitter<CR>
-nnoremap ,tf :<C-u>FriendsTwitter<CR><C-w>j
-nnoremap ,rf :<C-u>RefreshTwitter<CR><C-w>j
-nnoremap ,tu :<C-u>UserTwitter<CR><C-w>j
-nnoremap ,tr :<C-u>RepliesTwitter<CR><C-w>j
-nnoremap ,tn :<C-u>NextTwitter<CR>
-autocmd FileType twitvim call s:twitvim_my_settings()
-function! s:twitvim_my_settings()
-set nowrap
-endfunction
-'''
-
 # vim起動中に実行
 [[plugins]]
 repo = 'thinca/vim-quickrun'
@@ -71,7 +54,7 @@ on_ft = ["ruby", "python", "perl"]
 #入力補助
 [[plugins]]
 repo = 'kana/vim-smartinput'
-on_i = 1
+on_ft = ["ruby"]
 hook_post_source = '''
 call smartinput#map_to_trigger('i', '<Space>', '<Space>', '<Space>')
 call smartinput#define_rule({
