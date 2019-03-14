@@ -2,6 +2,7 @@
 [[plugins]]
 repo = 'Shougo/neosnippet-snippets'
 
+
 [[plugins]]
 repo = 'Shougo/context_filetype.vim'
 
@@ -31,21 +32,6 @@ set conceallevel=2 concealcursor=niv
 endif
 '''
 
-#Vim syntax highlighting for Vue components.
-[[plugins]]
-repo = 'posva/vim-vue'
-on_ft = ['vue']
-
-# slim syntax
-[[plugins]]
-repo = 'slim-template/vim-slim'
-on_ft = ['slim']
-
-#type script syntax
-[[plugins]]
-repo = 'leafgarland/typescript-vim'
-on_ft = ['typescript']
-
 # vim起動中に実行
 [[plugins]]
 repo = 'thinca/vim-quickrun'
@@ -62,7 +48,6 @@ call smartinput#define_rule({
 \   'char'  : '<Space>',
 \   'input' : '<Space><Space><Left>',
 \   })
-
 call smartinput#define_rule({
 \   'at'    : '( \%# )',
 \   'char'  : '<BS>',
@@ -77,25 +62,19 @@ call smartinput#define_rule({
 \   'filetype' : ['ruby'],
 \   'syntax'   : ['Constant', 'Special'],
 \   })
-
 call smartinput#map_to_trigger('i', '<Bar>', '<Bar>', '<Bar>')
 call smartinput#define_rule({
 \   'at' : '\({\|\<do\>\)\s*\%#',
 \   'char' : '<Bar>',
 \   'input' : '<Bar><Bar><Left>',
 \   'filetype' : ['ruby'],
-\    })'})'})
+\    })
 '''
 
-# Rubyのend補完
+# slim syntax
 [[plugins]]
-repo = 'tpope/vim-endwise'
-on_ft = ["ruby"]
-
-# Rubyのメソッドの定義元にジャンプ
-[[plugins]]
-repo = 'szw/vim-tags'
-on_ft = ["ruby"]
+repo = 'slim-template/vim-slim'
+on_ft = ['slim']
 
 # toml syntax
 [[plugins]]
