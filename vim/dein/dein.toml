@@ -94,12 +94,3 @@ let g:NERDDefaultAlign = 'left'
 
 [[plugins]]
 repo = 'w0rp/ale'
-hook_add = '''
-set hidden
-let g:LanguageClient_serverCommands = {
-    \ 'vue': ['vls'],
-    \ }
-'''
-
-[[plugins]]
-repo = 'Shougo/context_filetype.vim'
