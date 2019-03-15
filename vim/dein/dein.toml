@@ -6,10 +6,6 @@ repo = 'Shougo/dein.vim'
 [[plugins]]
 repo = 'wsdjeg/dein-ui.vim'
 
-# 非同期処理全般
-[[plugins]]
-repo = 'Shougo/vimproc.vim'
-
 # statusline
 [[plugins]]
 repo = 'itchyny/lightline.vim'
@@ -21,29 +17,6 @@ repo = 'Yggdroot/indentLine'
 # 無駄な空白をハイライト
 [[plugins]]
 repo = 'bronson/vim-trailing-whitespace'
-
-# j, k移動高速化
-[[plugins]]
-repo = 'rhysd/accelerated-jk'
-hook_add = '''
-nmap j <Plug>(accelerated_jk_gj)
-nmap k <Plug>(accelerated_jk_gk)
-'''
-
-# /検索強化
-[[plugins]]
-repo = 'osyo-manga/vim-anzu'
-hook_add = '''
-nmap n nzz<Plug>(anzu-update-search-status)
-nmap N Nzz<Plug>(anzu-update-search-status)
-nmap * <Plug>(anzu-star)
-nmap # <Plug>(anzu-sharp)
-nmap <silent> <ESC><ESC> :<C-u>nohlsearch<CR><Plug>(anzu-clear-search-status)
-'''
-
-# f検索強化
-[[plugins]]
-repo = 'rhysd/clever-f.vim'
 
 # ペインサイズ変更
 [[plugins]]
@@ -67,30 +40,11 @@ hook_add = '''
 let g:unite_enable_start_insert=1
 " バッファ一覧
 noremap <C-P> :Unite buffer<CR>
-" ファイル一覧
-noremap <C-N> :Unite -buffer-name=file file<CR>
-" 最近使ったファイルの一覧
-noremap <C-Z> :Unite file_mru<CR>
-" sourcesを「今開いているファイルのディレクトリ」とする
-noremap :uff :<C-u>UniteWithBufferDir file -buffer-name=file<CR>
-" ウィンドウを分割して開く
-au FileType unite nnoremap <silent> <buffer> <expr> <C-J> unite#do_action('split')
-au FileType unite inoremap <silent> <buffer> <expr> <C-J> unite#do_action('split')
-" ウィンドウを縦に分割して開く
-au FileType unite nnoremap <silent> <buffer> <expr> <C-K> unite#do_action('vsplit')
-au FileType unite inoremap <silent> <buffer> <expr> <C-K> unite#do_action('vsplit')
-" ESCキーを2回押すと終了する
-au FileType unite nnoremap <silent> <buffer> <ESC><ESC> :q<CR>
-au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
 '''
 
 [[plugins]]
 repo = 'Shougo/unite-outline'
 depends = 'Unite'
-
-#git差分表示
-[[plugins]]
-repo = 'airblade/vim-gitgutter'
 
 [[plugins]]
 repo = 'scrooloose/nerdtree'
@@ -119,7 +73,7 @@ call NERDTreeHighlightFile('php',    'Magenta', 'none', '#ff00ff', '#151515')
 [[plugins]]
 repo = 'tomasr/molokai'
 
-#comment out
+# comment out
 [[plugins]]
 repo = 'scrooloose/nerdcommenter'
 hook_add = '''
@@ -129,3 +83,15 @@ let g:NERDSpaceDelims = 1
 " Align line-wise comment delimiters flush left instead of following code indentation
 let g:NERDDefaultAlign = 'left'
 '''
+
+[[plugins]]
+repo = 'w0rp/ale'
+hook_add = '''
+set hidden
+let g:LanguageClient_serverCommands = {
+    \ 'vue': ['vls'],
+    \ }
+'''
+
+[[plugins]]
+repo = 'Shougo/context_filetype.vim'

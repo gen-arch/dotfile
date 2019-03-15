@@ -17,11 +17,6 @@ on_i = 1
 repo = 'ujihisa/neco-look'
 on_i = 1
 
-[[plugins]]
-repo = 'wokalski/autocomplete-flow'
-hook_source = 'let g:autocomplete_flow#insert_paren_after_function = 0'
-on_i = 1
-
 #[ruby]----------------------------------------------------------
 [[plugins]]
 repo = 'Shougo/deoplete-rct'
@@ -31,7 +26,31 @@ on_ft = ['ruby']
 repo = 'fishbullet/deoplete-ruby'
 on_ft = ['ruby']
 
-#----------------------------------------------------------------
+# Rubyのend補完
+[[plugins]]
+repo = 'tpope/vim-endwise'
+on_ft = ["ruby"]
+
+# Rubyのメソッドの定義元にジャンプ
+[[plugins]]
+repo = 'szw/vim-tags'
+on_ft = ["ruby"]
+#----------------------------------------------------------------------
+
+
+#[typescript]----------------------------------------------------------
+#type script syntax
+[[plugins]]
+repo = 'leafgarland/typescript-vim'
+on_ft = ['typescript']
+#----------------------------------------------------------------------
+
+#[vue]----------------------------------------------------------
+#Vim syntax highlighting for Vue components.
+[[plugins]]
+repo = 'posva/vim-vue'
+on_ft = ['vue']
+#----------------------------------------------------------------------
 
 [[plugins]]
 repo = 'zchee/deoplete-zsh'
@@ -44,4 +63,3 @@ on_ft = ['python']
 [[plugins]]
 repo = 'carlitux/deoplete-ternjs'
 on_ft = ['javascript']
-
