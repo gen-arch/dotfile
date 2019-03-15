@@ -120,14 +120,18 @@ nnoremap <silent> <F2> :call LanguageClient_textDocument_rename()<CR>
 repo = 'leafgarland/typescript-vim'
 on_ft = ['typescript']
 
-# [[plugins]]
-# repo = 'mhartington/nvim-typescript'
-# on_ft = ['typescript', 'vue']
-# hook_add='let g:nvim_typescript#vue_support = 1'
+[[plugins]]
+repo = 'mhartington/nvim-typescript'
+build = './install.sh'
+on_ft = ['typescript', 'vue']
 
-# [[plugins]]
-# repo = 'mhartington/deoplete-typescript'
-# on_ft = ['typescript', 'vue']
+[[plugins]]
+repo = 'mhartington/deoplete-typescript'
+on_ft = ['typescript', 'vue']
+
+[[plugins]]
+repo = 'Quramy/tsuquyomi'
+on_ft = ['typescript', 'vue']
 #----------------------------------------------------------------
 
 [[plugins]]
