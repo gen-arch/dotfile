@@ -95,9 +95,6 @@ set wildmode=list:longest
 " 不可視文字を表示
  set list
  set listchars=tab:»-,trail:-,extends:»,precedes:«,nbsp:%,eol:↲
-" 折り返し時に表示行単位での移動できるようにする
-nnoremap j gj
-nnoremap k gk
 
 " Tab系
 " Tab文字を半角スペースにする
