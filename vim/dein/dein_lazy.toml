@@ -6,6 +6,7 @@ on_ft = ['slim']
 [[plugins]]
 repo = 'Shougo/context_filetype.vim'
 
+
 # vim起動中に実行
 [[plugins]]
 repo = 'thinca/vim-quickrun'
