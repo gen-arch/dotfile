@@ -221,14 +221,16 @@ zstyle ':vcs_info:*' actionformats '[%b|%a]' #rebase 途中,merge コンフリ�
 #zaw(https://github.com/zsh-users/zaw)
 #install(git clone git://github.com/zsh-users/zaw.git)
 #=======================================
-source ~/zaw/zaw.zsh
+[ -f ~/zaw/zaw.zsh ] && source ~/zaw/zaw.zsh
 
 #=======================================
 #zplug(https://github.com/zplug/zplug)
 #install(curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh)
 #=======================================
-source ~/.zplug/init.zsh
-zplug "b4b4r07/enhancd", use:enhancd.sh
+if [ -f ~/.zplug/init.zsh ];then
+  source ~/.zplug/init.zsh
+  zplug "b4b4r07/enhancd", use:enhancd.sh
+fi
 #=======================================
 #プロンプト
 #=======================================

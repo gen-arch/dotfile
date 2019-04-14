@@ -3,9 +3,6 @@
 repo = 'slim-template/vim-slim'
 on_ft = ['slim']
 
-[[plugins]]
-repo = 'Shougo/context_filetype.vim'
-
 
 # vim起動中に実行
 [[plugins]]
@@ -14,6 +11,10 @@ on_ft = ["ruby", "python", "perl"]
 
 [[plugins]]
 repo = 'Shougo/neosnippet-snippets'
+
+[[plugins]]
+repo = 'Shougo/context_filetype.vim'
+
 
 [[plugins]]
 repo = 'Shougo/neosnippet.vim'

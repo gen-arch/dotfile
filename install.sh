@@ -21,6 +21,25 @@ ndenv(){
   fi
 }
 
+zsh_lib(){
+  if [[ ! -e ~/.temp/anyframe ]];then
+    git clone https://github.com/mollifier/anyframe ~/.temp/anyframe
+  fi
+
+  if [[ ! -e ~/.fzf.zsh ]];then
+    git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+    ~/.fzf/install
+  fi
+
+  if [[ ! -e ~/zaw/zaw.zsh ]];then
+    git clone git://github.com/zsh-users/zaw.git
+  fi
+
+  if [[ ! -e ~/.zplug/init.zsh ]];then
+    curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
+  fi
+}
+
 
 #private
 cmd_check(){
