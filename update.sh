@@ -5,6 +5,7 @@ rm ~/.zshrc
 rm ~/.zlogin
 rm ~/.tmux.conf
 rm ~/.bashrc
+rm ~/.Xmodmap
 
 ln -s ~/.vim ~/dotfiles/nvim/
 ln -s ~/dotfiles/.vimrc ~/dotfiles/nvim/init.vim
@@ -13,3 +14,4 @@ ln -s ~/dotfiles/.zshrc ~/
 ln -s ~/dotfiles/.zlogin ~/
 ln -s ~/dotfiles/.tmux.conf ~/
 ln -s ~/dotfiles/.bashrc ~/
+ln -s ~/dotfiles/xmodmap ~/.Xmodmap
