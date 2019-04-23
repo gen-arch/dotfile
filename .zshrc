@@ -260,6 +260,11 @@ if [ -e ~/.ndenv ]; then
   export PATH="$HOME/.ndenv/bin:$PATH"
   eval "$(ndenv init -)"
 fi
+if [ -e ~/.goenv ]; then
+  export GOENV_ROOT="$HOME/.goenv"
+  export PATH="$HOME/.goenv/bin:$PATH"
+  eval "$(goenv init -)"
+fi
 export SH_LOAD="exit"
 cd ~
 
