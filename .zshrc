@@ -248,6 +248,7 @@ RPROMPT='%{${fg[red]}%}[%~]%{${reset_color}%}'
 #=======================================
 if [ -e ~/.rbenv ]; then
   export PATH="$HOME/.rbenv/bin:$PATH"
+  export PATH="$HOME/.gem/ruby/2.6.0/bin:$PATH"
   eval "$(rbenv init -)"
 fi
 
