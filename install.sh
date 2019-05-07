@@ -7,6 +7,12 @@ rbenv(){
     echo "install [gcc openssl-devel readline-devel zlib-devel]"
   fi
 }
+goenv(){
+  if [[ ! -e ~/.goenv ]];then
+    git clone https://github.com/syndbg/goenv.git ~/.goenv
+    echo "install [gcc openssl-devel readline-devel zlib-devel]"
+  fi
+}
 
 pyenv(){
   if [[ ! -e ~/.pyenv ]];then
@@ -55,6 +61,8 @@ main()
   pyenv
   rbenv
   ndenv
+  goenv
+  zsh_lib
 }
 
 main
