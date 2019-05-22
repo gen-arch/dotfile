@@ -87,3 +87,8 @@ let g:NERDSpaceDelims = 1
 let g:NERDDefaultAlign = 'left'
 '''
 
+[[plugins]]
+repo = 'lambdalisue/vim-gista'
+hook_add = '''
+let g:gista#client#default_username = 'Gen-Arch'
+'''
