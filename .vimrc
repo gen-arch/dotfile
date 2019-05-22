@@ -10,7 +10,7 @@ if !isdirectory(s:dein_repo_dir)
 endif
 
 let &runtimepath     = s:dein_repo_dir .",". &runtimepath
-let s:toml_dir       = expand('~/dotfiles/vim/dein')
+let s:toml_dir       = expand('~/dotfile/vim/dein')
 let s:toml           = s:toml_dir . '/dein.toml'
 let s:lazy_toml      = s:toml_dir . '/dein_lazy.toml'
 let s:deoplete_toml  = s:toml_dir . '/deoplete.toml'
@@ -142,7 +142,7 @@ autocmd BufNewFile,BufRead *.slim setlocal filetype=slim
 autocmd BufNewFile,BufRead *.toml setlocal filetype=toml
 
 if system("uname -v") =~ "Microsoft"
-  source ~/dotfiles/vim/.vimrc_wsl
+  source ~/dotfile/vim/.vimrc_wsl
 else
-  source ~/dotfiles/vim/.vimrc_linux
+  source ~/dotfile/vim/.vimrc_linux
 endif
