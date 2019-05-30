@@ -7,7 +7,8 @@ fi
 
 # bundler
 alias be="bundle exec"
-alias bi="bundle install --path .bundle"
+alias bi="bundle install --path vendor/bundle"
+alias bil="bundle install --local"
 alias bp="bundle package --all"
 
 alias grep='grep --color'
@@ -32,3 +33,11 @@ alias color_strip='sed -r "s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[m|K]//g"'
 #tmux
 alias tchange='tmux set-option -ag prefix C-s'
 alias trevert='tmux set-option -ag prefix C-a'
+
+#git
+alias ga='git add'
+alias gc='git commit'
+alias grf='git reflog --date=local -n 10'
+alias gl='git log'
+alias gr='git reset --hard'
+alias gp='git push origin HEAD'

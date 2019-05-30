@@ -139,7 +139,7 @@ export LANG=ja_JP.UTF-8
 export PATH=$PATH:$HOME/bin
 
 #nvim
-export XDG_CONFIG_HOME="$HOME/dotfiles"
+export XDG_CONFIG_HOME="$HOME/dotfile"
 #=======================================
 
 #=======================================
@@ -190,7 +190,7 @@ fi
 #=======================================
 #エイリアス
 #=======================================
-[ -f ~/dotfiles/.aliasrc ] && source ~/dotfiles/.aliasrc
+[ -f ~/dotfile/.aliasrc ] && source ~/dotfile/.aliasrc
 #=======================================
 #モジュール(http://zsh.sourceforge.net/Doc/Release/Completion-System.html#Standard-Styles)
 #=======================================
