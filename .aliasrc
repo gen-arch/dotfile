@@ -35,8 +35,8 @@ alias tchange='tmux set-option -ag prefix C-s'
 alias trevert='tmux set-option -ag prefix C-a'
 
 #git
-alias ga='git add'
-alias gc='git commit'
+alias ga='git add --all'
+alias gc='git commit -m'
 alias grf='git reflog --date=local -n 10'
 alias gl='git log'
 alias gr='git reset --hard'
