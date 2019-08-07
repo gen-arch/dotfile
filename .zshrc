@@ -12,7 +12,7 @@ if [ -z "$SH_LOAD" ]; then
   fi
 fi
 
-# [ -f ~/.zlogin ] && source ~/.zlogin
+[ -f ~/.zlogin ] && source ~/.zlogin
 echo "include .zshrc"
 #=======================================
 #ローカル設定読み込み
